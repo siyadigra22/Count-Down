@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+  background: rgba(0,0,0,0.8);
+  color: rgba(255,255,255,0.8);
+  font: 100% 'Lato', sans-serif;
+  text-align: center;
+  padding: 2%;
+}
+#pomodoro {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: 1fr 1fr 4fr;
+  grid-template-areas: 
+    'session reset'
+    'text text'
+    'display display';
+}
+#session, #reset {
+  text-align: center;
+  padding: 2%;
+}
+
+#session-secion {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr); 
+}
+
+#session {
+  grid-area: session;
+  width: 25%;
+}
+
+#button-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#reset{
+  grid-area: reset;
+  background: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.8);
+  border: 1px solid black;
+  padding: 10%;
+}
+#text {
+  grid-area: text;
+}
+#display {
+  grid-area: display;
+  background: rgb(117, 168, 128);
+  color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 250%;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  border-radius: 50%;
+  border: 5px solid rgb(16, 16, 16);
+  box-shadow: 
+    -5px -5px 50px rgba(0,0,0,0.5),
+    5px 5px 50px rgba(0,0,0,0.2) inset;
+}
+
+@media only screen and (min-width: 768px) {
+  #pomodoro {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas: 
+      'session text reset'
+      'display display display'
+  }
+  #display {
+    height: 400px;
+    width: 400px;
+    font-size: 500%;
+    border-radius: 50%;
+    border: 5px solid red;
+  }
+}
